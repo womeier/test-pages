@@ -48,7 +48,7 @@ jobs:
             endGroup
           script: |
             startGroup Build docs
-              echo "test" > ./docs/index.html
+              mkdir ./docs; echo "test" > ./docs/index.html
             endGroup
           # skip uninstall since we need docs/ for upload
           uninstall: ""
