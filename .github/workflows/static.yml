@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Write output file
-        run:  mkdir out && echo "test" > out/test.html && ls && pwd -P
+        run:  mkdir /tmp/out && echo "test" > /tmp/out/index.html && ls && pwd -P
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '/home/runner/work/test-pages/test-pages/out/'
+          path: '/tmp/out/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
